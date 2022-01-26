@@ -31,7 +31,7 @@ const Example = () => {
       <Box>
         <AspectRatio w="100%" ratio={16 / 9}>
           <Image source={{
-            uri: "https://github.com/heraclitothiago/oab-form/blob/main/assets/imgs/demonstration.png?raw=true"
+            uri: "https://github.com/heraclitothiago/contate-oab-caxias-ma/blob/main/assets/public/imgs/demonstration.png?raw=true"
           }} alt="image" />
         </AspectRatio>
         <Center bg="violet.500" _dark={{
