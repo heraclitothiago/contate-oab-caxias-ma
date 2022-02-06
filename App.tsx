@@ -1,17 +1,20 @@
 import React from "react"
-import { Center, NativeBaseProvider, Stack, Input, TextArea, Button, Link, Text, Box, AspectRatio, Image, Heading, HStack } from "native-base"
+import {
+  Center, NativeBaseProvider, Stack, Input, TextArea, Button, Link, Text,
+  Box, AspectRatio, Image, Heading, HStack
+} from "native-base"
 
 const Formulario = () => {
   return <Box width="100%">
     <Input variant="outline" placeholder="Digite o seu nome" />
     <TextArea h={20} placeholder="Digite a sua Mensagem" />
     <Text fontSize="xs" _light={{
-            color: "muted.500"
-          }} _dark={{
-            color: "muted.400"
-          }} fontWeight="500" ml="-0.5" mt="-1">
-           *Os campos não são obrigatórios
-          </Text>
+      color: "muted.500"
+    }} _dark={{
+      color: "muted.400"
+    }} fontWeight="500" ml="-0.5" mt="-1">
+      *Os campos não são obrigatórios
+    </Text>
     <Button onPress={() => console.log('envou')}>Enviar</Button>
   </Box>
 };
