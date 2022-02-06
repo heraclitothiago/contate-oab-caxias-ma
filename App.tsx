@@ -1,26 +1,40 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   Center, NativeBaseProvider, Stack, Input, TextArea, Button, Link, Text,
   Box, AspectRatio, Image, Heading, HStack
 } from "native-base"
 
+
 const Formulario = () => {
+  const [name, setName] = useState('')
+  const [mensagem, setMensagem] = useState('')
+
+  const resetAndSend = (...args) => {
+    args.forEach(element => {
+      console.log(element.toString());
+    });
+  }
+
   return <Box width="100%">
-    <Input variant="outline" placeholder="Digite o seu nome" />
-    <TextArea h={20} placeholder="Digite a sua Mensagem" />
+    <Input variant="outline" placeholder="Digite o seu nome"
+      onChangeText={text => setName(text)}
+    />
     <Text fontSize="xs" _light={{
       color: "muted.500"
     }} _dark={{
       color: "muted.400"
     }} fontWeight="500" ml="-0.5" mt="-1">
-      *Os campos não são obrigatórios
+      *Campo não obrigatório
     </Text>
-    <Button onPress={() => console.log('envou')}>Enviar</Button>
+    <TextArea h={20} placeholder="Digite a sua Mensagem"
+      onChangeText={text => setMensagem(text)}
+    />
+    <Button onPress={() => resetAndSend([name, mensagem])}>Enviar</Button>
   </Box>
 };
 
 
-const Example = () => {
+const DivBox = () => {
   return <Box alignItems="center" width="100%">
     <Box rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1" _dark={{
       borderColor: "coolGray.600",
@@ -77,7 +91,7 @@ export default () => {
   return (
     <NativeBaseProvider>
       <Center flex={1}>
-        <Example />
+        <DivBox />
       </Center>
     </NativeBaseProvider>
   )
